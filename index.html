@@ -3,89 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- ⬇⬇⬇ 본인 정보로 교체 ⬇⬇⬇ -->
-  <title>🚀 [본인 프로젝트 이름] — by &lt;본인 익명 ID&gt;</title>
+  
+  <title>🚀 [AI 유튜브 자막 생성기] — by &lt;Potato1028&gt;</title>
   <meta name="description" content="[본인 프로젝트 한 줄 설명]" />
-  <!-- ⬆⬆⬆ 본인 정보로 교체 ⬆⬆⬆ -->
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ============ HERO ============ -->
   <header class="hero">
     <div class="container">
-      <!-- ⬇⬇⬇ 본인 프로젝트로 교체 (예: "🍱 칼로리카운터") ⬇⬇⬇ -->
-      <h1>🚀 [심기준이 만들 프로젝트 이름]</h1>
-      <p class="tagline">[프로젝트가 무엇을 하는지 한 줄로]</p>
-      <!-- ⬆⬆⬆ 본인 프로젝트로 교체 ⬆⬆⬆ -->
+      <h1>🚀 [AI 유튜브 자막 생성기]</h1>
+      <p class="tagline">[Gemini 2.5 Flash를 활용한 실시간 맞춤형 번역 자막 오버레이 서비스]</p>
+      
     </div>
   </header>
 
   <main class="container">
 
-    <!-- ============ 데모 카드 ============ -->
     <section class="demo-card">
-      <!-- ⬇⬇⬇ screenshot.png 를 본인 프로젝트 화면 캡쳐로 교체 ⬇⬇⬇ -->
-      <img class="screenshot" src="screenshot.png" alt="[본인 프로젝트] 데모 화면" />
-      <!-- ⬆⬆⬆ screenshot.png 를 본인 프로젝트 화면 캡쳐로 교체 ⬆⬆⬆ -->
+      <img class="demo-img" src="https://img.youtube.com/vi/OVYMIWnl-uA/maxresdefault.jpg" alt="AI 유튜브 자막 생성기 데모">
 
       <div class="cta">
-        <!-- ⬇⬇⬇ 다음 주(10주차) 데모 띄운 후 href="#" 를 진짜 도메인으로 ⬇⬇⬇ -->
         <a class="btn btn-primary" href="https://gamja1028-s13-aiweb2026.hf.space" aria-disabled="true" title="다음 주에 살아납니다">
           ▶ Live Demo <span class="badge">Coming Week 10</span>
         </a>
-        <!-- ⬆⬆⬆ 다음 주에 href="https://&lt;본인 ID&gt;-demo.aiweb2026.site" 로 변경 ⬆⬆⬆ -->
 
-        <!-- ⬇⬇⬇ 본인 GitHub 리포 URL 로 교체 ⬇⬇⬇ -->
-        <a class="btn btn-secondary" href="https://github.com/&lt;본인 GitHub username&gt;/&lt;본인 프로젝트 리포&gt;" target="_blank" rel="noopener">
+        <a class="btn btn-secondary" href="https://github.com/potato1028/s13-aiweb2026" target="_blank" rel="noopener">
           ⌨ Source on GitHub
         </a>
-        <!-- ⬆⬆⬆ 본인 GitHub 리포 URL 로 교체 ⬆⬆⬆ -->
       </div>
     </section>
 
-    <!-- ============ Tech Stack ============ -->
     <section class="stack-section">
       <h2>🛠 Tech Stack</h2>
-      <!-- ⬇⬇⬇ 본인 프로젝트가 실제로 쓴 기술로 교체 ⬇⬇⬇ -->
       <ul class="stack">
-        <li>[기술 1]</li>
-        <li>[기술 2]</li>
-        <li>[기술 3]</li>
+        <li>FastAPI (Python 3)</li>
+        <li>Gemini 2.5 Flash API</li>
+        <li>yt-dlp & YouTube IFrame API</li>
         <li>Docker</li>
-        <li>Oracle Always Free</li>
+        <li>Hugging Face Spaces</li>
         <li>GitHub Actions</li>
       </ul>
-      <!-- ⬆⬆⬆ 본인 프로젝트가 실제로 쓴 기술로 교체 ⬆⬆⬆ -->
     </section>
 
-    <!-- ============ 어떻게 만들었나 ============ -->
     <section class="howto">
       <h2>🧠 어떻게 만들었나</h2>
-      <!-- ⬇⬇⬇ 본인 프로젝트 설명 3줄로 교체 ⬇⬇⬇ -->
       <p>
-        [무엇을 만들었나 — 프로젝트의 핵심 기능 한 문장.]
-        [어떤 기술 / 모델 / API 를 써서 어떻게 동작시키는가.]
-        [사용자가 어떻게 쓰는가 — 입력은 무엇, 출력은 무엇.]
+        사용자가 입력한 유튜브 영상의 오디오를 추출하여 AI로 도메인 맞춤형 한국어 자막을 생성하고, 영상 재생 시간에 맞춰 실시간으로 화면에 띄워주는 서비스입니다.
+        백엔드는 FastAPI와 yt-dlp를 활용해 오디오를 처리한 뒤 Gemini 2.5 Flash API에 사용자가 지정한 '번역 테마' 프롬프트를 동적으로 주입하여 문맥에 맞는 자막을 생성하며, 프론트엔드는 YouTube IFrame API와 Document PiP API를 사용해 영상과 자막을 실시간으로 동기화하고 미니 플레이어 화면을 제공합니다.
+        사용자가 Gemini API Key, 유튜브 영상 URL, 그리고 원하는 번역 테마(예: 2D 플랫포머 게임 개발, IT 기기 리뷰 등)를 입력하면, 자막이 실시간으로 오버레이되는 유튜브 영상 화면과 함께 PIP 모드 기능이 출력됩니다.
       </p>
-      <!-- ⬆⬆⬆ 본인 프로젝트 설명 3줄로 교체 ⬆⬆⬆ -->
     </section>
 
-    <!-- ============ Giscus 댓글 (8장에서 추가) ============ -->
     <section id="comments" class="comments">
       <h2>💬 이 프로젝트 어떠세요?</h2>
       <p class="comments-note">
         GitHub 계정으로 로그인하면 댓글이 본인 리포의 GitHub Discussions에 자동 저장됩니다.
       </p>
-
-      <!--
-        ⬇⬇⬇ 9주차 SECTION 8 에서 giscus.app 가 자동 생성한 script 코드를 여기에 붙여넣기 ⬇⬇⬇
-        교체할 속성:
-          - data-repo
-          - data-repo-id
-          - data-category-id
-        나머지 속성은 그대로 두세요.
-      -->
       <div class="giscus"></div>
       <script src="https://giscus.app/client.js"
         data-repo="potato1028/s13-aiweb2026"
