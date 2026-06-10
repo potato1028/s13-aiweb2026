@@ -4,61 +4,208 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>🚀 [AI 유튜브 자막 생성기] — by &lt;Potato1028&gt;</title>
-  <meta name="description" content="[본인 프로젝트 한 줄 설명]" />
+  <title>📰 AI 해외 뉴스 번역 & 요약기 — by Potato1028</title>
+  <meta name="description" content="Llama-3를 활용한 실시간 뉴스 요약 및 번역 서비스" />
   
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 🌟 모던 디자인 CSS */
+    :root {
+      --primary: #0ea5e9;
+      --primary-hover: #0284c7;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+    }
+    body {
+      font-family: 'Pretendard', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 4px solid var(--primary);
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-top: 15px;
+      font-weight: 300;
+    }
+    /* Main Content */
+    main {
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .demo-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease;
+    }
+    .demo-img:hover {
+      transform: translateY(-5px);
+    }
+    /* Buttons */
+    .cta {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background-color: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+      transform: translateY(-2px);
+    }
+    /* Sections */
+    h2 {
+      color: var(--text-main);
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    /* Tech Stack */
+    .stack {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .stack li {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+    }
+    /* Comments */
+    .comments-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
   <header class="hero">
     <div class="container">
-      <h1>🚀 [AI 유튜브 자막 생성기]</h1>
-      <p class="tagline">[Gemini 2.5 Flash를 활용한 실시간 맞춤형 번역 자막 오버레이 서비스]</p>
-      
+      <h1>📰 AI 해외 뉴스 번역 & 요약기</h1>
+      <p class="tagline">오픈소스 LLM(Llama-3-8B)을 활용한 빠르고 정확한 글로벌 뉴스 분석 서비스</p>
     </div>
   </header>
 
   <main class="container">
 
-    <section class="demo-card">
-      <a href="https://youtu.be/OVYMIWnl-uA" target="_blank" rel="noopener noreferrer">
-        <img class="demo-img" src="https://img.youtube.com/vi/OVYMIWnl-uA/maxresdefault.jpg" alt="AI 유튜브 자막 생성기 데모">
+    <section class="card">
+      <a href="https://gamja1028-s13-aiweb2026.hf.space" target="_blank" rel="noopener noreferrer">
+        <img class="demo-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop" alt="AI 뉴스 번역기 커버 이미지">
       </a>
 
       <div class="cta">
         <a class="btn btn-primary" href="https://gamja1028-s13-aiweb2026.hf.space" target="_blank" rel="noopener noreferrer">
-          ▶ Live Demo
+          🚀 Live Demo (즉시 체험)
         </a>
-
         <a class="btn btn-secondary" href="https://github.com/potato1028/s13-aiweb2026" target="_blank" rel="noopener">
-          ⌨ Source on GitHub
+          ⌨️ Source on GitHub
         </a>
       </div>
     </section>
 
-    <section class="stack-section">
+    <section class="card">
       <h2>🛠 Tech Stack</h2>
       <ul class="stack">
         <li>FastAPI (Python 3)</li>
-        <li>Gemini 2.5 Flash API</li>
-        <li>yt-dlp & YouTube IFrame API</li>
+        <li>BeautifulSoup4 & Requests</li>
+        <li>Hugging Face Inference API</li>
+        <li>Meta Llama-3-8B-Instruct</li>
         <li>Docker</li>
-        <li>Hugging Face Spaces</li>
         <li>GitHub Actions</li>
       </ul>
     </section>
 
-    <section class="howto">
+    <section class="card">
       <h2>🧠 어떻게 만들었나</h2>
       <p>
-        사용자가 입력한 유튜브 영상의 오디오를 추출하여 AI로 도메인 맞춤형 한국어 자막을 생성하고, 영상 재생 시간에 맞춰 실시간으로 화면에 띄워주는 서비스입니다.
-        백엔드는 FastAPI와 yt-dlp를 활용해 오디오를 처리한 뒤 Gemini 2.5 Flash API에 사용자가 지정한 '번역 테마' 프롬프트를 동적으로 주입하여 문맥에 맞는 자막을 생성하며, 프론트엔드는 YouTube IFrame API와 Document PiP API를 사용해 영상과 자막을 실시간으로 동기화하고 미니 플레이어 화면을 제공합니다.
-        사용자가 Gemini API Key, 유튜브 영상 URL, 그리고 원하는 번역 테마(예: 2D 플랫포머 게임 개발, IT 기기 리뷰 등)를 입력하면, 자막이 실시간으로 오버레이되는 유튜브 영상 화면과 함께 PIP 모드 기능이 출력됩니다.
+        사용자가 해외 뉴스 URL을 입력하면, 웹 스크래핑 기술을 이용해 기사 본문을 추출하고 Hugging Face의 <strong>Llama-3-8B-Instruct</strong> 모델을 활용해 '핵심 3줄 요약'과 '전체 한글 번역'을 실시간으로 제공하는 웹 서비스입니다.
+      </p>
+      <p>
+        백엔드는 <strong>FastAPI</strong>와 <strong>BeautifulSoup4</strong>를 결합하여 웹 페이지의 불필요한 요소를 제외한 순수 텍스트만을 빠르게 추출합니다. 이후 추출된 데이터를 Hugging Face Inference API로 전송하여 Llama-3 모델이 사용자가 지정한 '번역 어조'에 맞춰 텍스트를 구조화하도록 프롬프트 엔지니어링을 적용했습니다.
+      </p>
+      <p>
+        특히 사용자 편의성을 극대화하기 위해 서버에 <strong>공용 토큰을 내장</strong>하여 방문자가 별도의 가입이나 API 키 없이 즉시 서비스를 체험해 볼 수 있도록 하였으며, 공용 토큰의 일일 한도 초과 시 개인 토큰으로 매끄럽게 전환하여 사용할 수 있는 에러 핸들링 로직을 구현했습니다.
       </p>
     </section>
 
-    <section id="comments" class="comments">
+    <section id="comments" class="card">
       <h2>💬 이 프로젝트 어떠세요?</h2>
       <p class="comments-note">
         GitHub 계정으로 로그인하면 댓글이 본인 리포의 GitHub Discussions에 자동 저장됩니다.
@@ -74,20 +221,19 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="preferred_color_scheme"
+        data-theme="light"
         data-lang="ko"
         crossorigin="anonymous"
         async>
-    </script>
-      <!-- ⬆⬆⬆ giscus 설정값 교체 ⬆⬆⬆ -->
+      </script>
     </section>
   </main>
 
   <footer>
     <div class="container">
       <p>
-        2026 AI 웹 융합 · 9주차 데모 소개 페이지 ·
-        <a href="https://aiweb2026.site">aiweb2026.site</a>
+        2026 AI 웹 융합 · 9/11주차 포트폴리오 랜딩 페이지 ·
+        <a href="https://aiweb2026.site" target="_blank">aiweb2026.site</a>
       </p>
     </div>
   </footer>
