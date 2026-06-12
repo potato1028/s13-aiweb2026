@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>📰 AI 해외 뉴스 번역 & 요약기 — by Potato1028</title>
-  <meta name="description" content="Llama-3를 활용한 실시간 뉴스 요약 및 번역 서비스" />
+  <title>📰 AI 프리미엄 해외 뉴스 번역 & 요약기 — by Potato1028</title>
+  <meta name="description" content="다중 AI 폴백 시스템을 활용한 실시간 뉴스 요약 및 번역 서비스" />
   
   <style>
     /* 🌟 모던 디자인 CSS */
@@ -158,8 +158,8 @@
 
   <header class="hero">
     <div class="container">
-      <h1>📰 AI 해외 뉴스 번역 & 요약기</h1>
-      <p class="tagline">오픈소스 LLM(Llama-3-8B)을 활용한 빠르고 정확한 글로벌 뉴스 분석 서비스</p>
+      <h1>📰 프리미엄 AI 해외 뉴스 번역 & 요약기</h1>
+      <p class="tagline">OpenAI, Gemini, Llama 다중 폴백 시스템과 5가지 편의 기능을 탑재한 고가용성 웹 서비스</p>
     </div>
   </header>
 
@@ -184,24 +184,33 @@
       <h2>🛠 Tech Stack</h2>
       <ul class="stack">
         <li>FastAPI (Python 3)</li>
-        <li>BeautifulSoup4 & Requests</li>
-        <li>Hugging Face Inference API</li>
-        <li>Meta Llama-3-8B-Instruct</li>
-        <li>Docker</li>
-        <li>GitHub Actions</li>
+        <li>BeautifulSoup4</li>
+        <li>OpenAI API (GPT-4o-mini)</li>
+        <li>Google GenAI (Gemini-2.5)</li>
+        <li>Hugging Face (Llama-3.1)</li>
+        <li>html2canvas (Image Export)</li>
       </ul>
     </section>
 
     <section class="card">
       <h2>🧠 어떻게 만들었나</h2>
       <p>
-        사용자가 해외 뉴스 URL을 입력하면, 웹 스크래핑 기술을 이용해 기사 본문을 추출하고 Hugging Face의 <strong>Llama-3-8B-Instruct</strong> 모델을 활용해 '핵심 3줄 요약'과 '전체 한글 번역'을 실시간으로 제공하는 웹 서비스입니다.
+        단순한 번역기를 넘어, 실제 서비스 환경에서도 안정적으로 동작하는 <strong>고가용성(High Availability) 아키텍처</strong>와 사용자 친화적인 UI를 결합한 프리미엄 뉴스 요약 서비스입니다.
       </p>
+      
+      <h3>1. 3중 AI 폭포수(Waterfall) 폴백 시스템</h3>
       <p>
-        백엔드는 <strong>FastAPI</strong>와 <strong>BeautifulSoup4</strong>를 결합하여 웹 페이지의 불필요한 요소를 제외한 순수 텍스트만을 빠르게 추출합니다. 이후 추출된 데이터를 Hugging Face Inference API로 전송하여 Llama-3 모델이 사용자가 지정한 '번역 어조'에 맞춰 텍스트를 구조화하도록 프롬프트 엔지니어링을 적용했습니다.
+        서버 과부하로 인해 단일 AI 모델이 응답하지 못할 경우를 대비해 백엔드에 다중 우회 로직을 구현했습니다. <strong>OpenAI (GPT-4o-mini)</strong>가 실패하면 즉시 <strong>Google Gemini (2.5-Flash)</strong>로, 그것마저 실패하면 <strong>Hugging Face (Llama-3.1-8B)</strong>로 요청을 넘겨 사용자는 에러를 눈치채지 못하고 무조건 결과물을 받을 수 있도록 설계했습니다.
       </p>
+
+      <h3>2. 프롬프트 엔지니어링을 통한 핵심 키워드 추출</h3>
       <p>
-        특히 사용자 편의성을 극대화하기 위해 서버에 <strong>공용 토큰을 내장</strong>하여 방문자가 별도의 가입이나 API 키 없이 즉시 서비스를 체험해 볼 수 있도록 하였으며, 공용 토큰의 일일 한도 초과 시 개인 토큰으로 매끄럽게 전환하여 사용할 수 있는 에러 핸들링 로직을 구현했습니다.
+        단순 정규식을 통한 무의미한 단어 빈도수 추출 방식을 버리고, AI 프롬프트에 '해시태그 생성 지침'을 주입했습니다. 기사의 문맥과 고유명사를 완벽히 이해한 AI가 뽑아낸 태그를 서버가 분리하여 프론트엔드에 깔끔한 뱃지 형태로 전달합니다.
+      </p>
+
+      <h3>3. 5가지 프론트엔드 프리미엄 기능</h3>
+      <p>
+        순수 HTML/JS를 활용해 부가적인 서버 부하 없이 클라이언트 단에서 <strong>① 다크모드 토글, ② Web Speech API를 활용한 뉴스 음성 읽기(TTS), ③ html2canvas를 활용한 요약본 이미지 저장, ④ LocalStorage를 이용한 나만의 스크랩북</strong> 기능을 구현하여 실제 상용 서비스 수준의 사용성을 확보했습니다.
       </p>
     </section>
 
